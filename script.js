@@ -6,9 +6,48 @@ let usersDatabase = [];
 // Function to render the sign-up form
 function renderSignUp() {
     rootDiv.innerHTML = `
+
+    <style>
+            h1{
+               text-align: center; 
+               font-size: 48px;
+            }
+
+            label{
+            font-size: 20px;
+           padding-left: 370px;
+           width: 240px;
+           display: inline-block;
+           text-align: right;
+           padding-bottom: 10px;
+            }
+
+            #border{
+            border-style: solid;
+            border-color: rgb(52, 152, 246); 
+            background-color: rgb(52, 152, 246);
+            
+            }
+            
+            
+            button{
+           display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+            
+            }
+
+            p{
+            text-align: center;
+            
+            }
+    </style>
+
+            <div id="border">
         <h1>Sign Up</h1>
         <form id="signupForm">
-            <label for="name">Name:</label>
+            <label id="sabo" for="name">Name:</label>
             <input type="text" id="name" placeholder="Enter your name"><br>
             <label for="email">Email:</label>
             <input type="email" id="email" placeholder="Enter your email"><br>
@@ -17,6 +56,7 @@ function renderSignUp() {
             <button type="button" onclick="handleSignUp()">Sign Up</button>
             <p>Already have an account? <a href="#" onclick="renderLogin()">Login</a></p>
         </form>
+        </div>
     `;
 }
 
@@ -55,6 +95,43 @@ function handleSignUp() {
 // Function to render the login form
 function renderLogin() {
     rootDiv.innerHTML = `
+     <style>
+            h1{
+               text-align: center; 
+               font-size: 48px;
+            }
+
+            label{
+            font-size: 20px;
+           padding-left: 370px;
+           width: 240px;
+           display: inline-block;
+           text-align: right;
+           padding-bottom: 10px;
+            }
+
+            #border{
+            border-style: solid;
+            border-color: rgb(52, 152, 246); 
+            background-color: rgb(52, 152, 246);
+            
+            }
+            
+            
+            button{
+           display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+            
+            }
+
+            p{
+            text-align: center;
+            
+            }
+    </style>
+    <div id="border">
         <h1>Login</h1>
         <form id="loginForm">
             <label for="email">Email:</label>
@@ -64,6 +141,7 @@ function renderLogin() {
             <button type="button" onclick="handleLogin()">Login</button>
             <p>Don't have an account? <a href="#" onclick="renderSignUp()">Sign Up</a></p>
         </form>
+        </div>
     `;
 }
 
@@ -90,6 +168,22 @@ function handleLogin() {
 // Function to render the home page after successful login or sign-up
 function renderHomePage() {
     rootDiv.innerHTML = `
+        
+    <style>
+
+    h1{
+    text-align: center;
+    
+    }
+    #border{
+            border-style: solid;
+            border-color: rgb(52, 152, 246); 
+            background-color: rgb(52, 152, 246);
+            
+            }
+
+            </style>
+        <div id="border">
         <h1>Welcome, ${userName}!</h1>
         <h2>Create a Post</h2>
         <textarea id="postContent" placeholder="What's on your mind?"></textarea><br>
@@ -97,6 +191,7 @@ function renderHomePage() {
         <h3>Your Posts</h3>
         <ul id="postList"></ul>
         <button type="button" onclick="logout()">Logout</button>
+        </div>
     `;
 }
 
@@ -163,4 +258,3 @@ function editPost(index) {
         renderPostList(); // Update the displayed post list
     }
 }
-
